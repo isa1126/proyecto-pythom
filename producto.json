@@ -1,0 +1,82 @@
+{
+"celurares":[
+    {
+        "nombre": "Samsung Galaxy Z Flip",
+        "marca":"Samsung",
+        "precio": "$4.299.950",
+        "red":"2G, 3G, 4G, 5G",
+        "ram":"8 GB",
+        "disponible":"pocas unidades",
+        "color": "negro, blanco"
+    },
+    {
+        "nombre": "Iphone 15 128gb 5g",
+        "marca":"Iphone ",
+        "precio": "$4.435.960",
+        "red":"5G",
+        "ram":"128 GB",
+        "disponible":"pocas unidades",
+        "color": "negro, blanco"
+
+    },
+    {
+        "nombre": "Celular Oppo A58 256 GB",
+        "marca":"Oppo ",
+        "precio": "$799.900",
+        "red":"2G, 3G, 4G",
+        "ram":"8GB",
+        "disponible":"pocas unidades",
+        "color": "negro, blanco"
+    }
+    
+],
+"televisores":[
+    {
+        "nombre":"TV Kalley 50 QLED GTV50UHDQV2",
+        "marca":"Kalley",
+        "precio":"1.989.900",
+        "SmarTV": true,
+        "Tipo de Pantalla": "QLED"
+    },
+    {
+        "nombre":"TV LG 75 Smart Tv 4k UHD Ai ThinQ + Control Magic",
+        "marca":"LG",
+        "precio":"$3.780.900",
+        "SmarTV": true,
+        "Tipo de Pantalla": " LED"
+    },
+    {
+        "nombre":"TV Kalley 55 QLED GTV55UHDQ + Parlante",
+        "marca":"Kalley",
+        "precio":"$2.223.900",
+        "SmarTV": true,
+        "Tipo de Pantalla": ""
+    }
+],
+
+"computadoras":[
+    {
+        "nombre":"Portátil Acer Nitro AN515-58-55TY 512GB SSD 15.6",
+        "marca":"Acer",
+        "precio":"$4.430.900",
+        "ram":"8 GB",
+        "Sistema operativo":"Windows 11"
+    },
+    {
+        "nombre":"Portátil IdeaPad Slim 3 AMD R3 512 GB SSD",
+        "marca":"Lenovo",
+        "precio":"$2.349.900",
+        "ram":"8 GB",
+        "Modelo": "82XN002SLM"
+    },
+    {
+        "nombre":"PPortátil HP 14-dq2510la Intel i3 512GB SSD+Mouse+Funda",
+        "marca":"HP",
+        "precio":"$1.585.900",
+        "ram":"8 GB",
+        "Sistema operativo": "Windows 11 Home Single Language"
+
+    }
+
+]
+}

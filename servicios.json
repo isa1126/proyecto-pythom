@@ -1,0 +1,21 @@
+{
+    "servicios":[
+        {           
+            "numero_sevicio":1,
+            "nombre":"internet de Fibra Óptica",
+            "precio":60000
+        },
+
+        {
+            "numero_servicio":2,
+            "nombre": "Planes pospago",
+            "precio":30000
+        },
+        
+        {
+            "numero_sevicio":3,
+            "nombre":"Planes prepago",
+            "precio":"25000"
+        }
+    ]
+}
