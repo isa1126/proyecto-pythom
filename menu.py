@@ -1,64 +1,55 @@
 import json
 
 
-def restro_usuario():
-    nombre= input("Ingrese el nombre del usuario: ")
-    
-    while True:
-        try:
-            documento= int(input("ingrese el documento del usuario: "))
-            break
-        except:
-            print("Ingrese solo numeros")
-    direcion=input("Ingrese el direccion: ")
-    while True:
-        try:
-            telefono= int(input("ingrese el telefono del usuario: "))
-            break
-        except:
-            print("Ingrese solo numeros")
-    categoria= input("Ingrese la categoria del usuario nuevo, regular,leal: ")
-    
+# Modificar el esquema de usuario
+usuario = {
+    "nombre": "",
+    "direccion": "",
+    "telefono": "",
+    "categoria": "",
+    "servicios_utilizados": [],
+    "interacciones": []
+}
 
-def cargar_usuarios():
-    try:
-        with open("usuarios.json","r") as file:
-            return json.load(file)
-    except FileExistsError:
-        return ()
-    
-def guardar_usuarios(usuario):
-    with open("usuario.json", "w") as file:
-        json.dump(usuario, file, indent=4)
-        
-def agregar_usuario(nuevo_usuario):
-    usuarios = cargar_usuarios()
-    usuarios.append(nuevo_usuario)
-    guardar_usuarios(usuarios)
-    
-def numero_usuario(numero_usuario):
-    usuario= cargar_usuarios()
-    for usuarios in usuario:
-        if usuarios["numero"]== numero_usuario:
-            return usuario
-    return None
-    
-def actualizar_usuario(numero_usuario, usuario_actializado):
-    usuarios =cargar_usuarios()
-    for usuario in usuarios:
-        if usuario["numero"]== numero_usuario:
-            usuario.update(usuario_actializado)
-            guardar_usuarios(usuario)
-            return True
-    return False
+# Funciones para registrar servicios utilizados e interacciones con la empresa
+def registrar_servicio(usuario, servicio):
+    usuario["servicios_utilizados"].append(servicio)
 
-def eliminar_usuario(numero_usuario):
-    usuarios= cargar_usuarios()
-    usuario_actualizado=[usuario for usuario in usuario if usuario["identificardor"] != numero_usuario]
-    if len(usuario_actualizado)!= len (usuarios):
-        guardar_usuarios(usuario_actualizado)
-        return True
-    return False
+def registrar_interaccion(usuario, interaccion):
+    usuario["interacciones"].append(interaccion)
+
+# Modificar las funciones cargar_usuarios() y guardar_usuarios(usuarios) para incluir los campos adicionales
+
+# Modificar el menú para incluir opciones para ver el historial de servicios utilizados e interacciones
+def menu():
+    while True:
+        print("\n--- Menú de Usuarios ---")
+        print("1. Agregar Usuario")
+        print("2. Mostrar Usuarios")
+        print("3. Actualizar Usuario")
+        print("4. Eliminar Usuario")
+        print("5. Ver Historial de Servicios Utilizados")
+        print("6. Ver Historial de Interacciones")
+        print("7. Salir")
         
+        opcion = input("Seleccione una opción: ")
         
-restro_usuario()
+        if opcion == "1":
+            agregar_usuario()
+        elif opcion == "2":
+            mostrar_usuarios()
+        elif opcion == "3":
+            actualizar_usuario()
+        elif opcion == "4":
+            eliminar_usuario()
+        elif opcion == "5":
+            ver_historial_servicios()
+        elif opcion == "6":
+            ver_historial_interacciones()
+        elif opcion == "7":
+            print("¡Hasta luego!")
+            break
+        else:
+            print("Opción inválida. Inténtelo de nuevo.")
+
+# Otras funciones necesarias
