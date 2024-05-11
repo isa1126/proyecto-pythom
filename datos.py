@@ -1,10 +1,9 @@
 import json
 
 def cargar_datos(servicios):
-    datos = {}
     with open(servicios,"r") as file:
         servicios=json.load(file)
-    return datos
+        return servicios
         
         
 
