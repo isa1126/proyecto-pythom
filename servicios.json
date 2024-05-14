@@ -1,19 +1,73 @@
 {
-    "servicios": [
+    "internet": [
         {
-            "numero_sevicio": 1,
-            "nombre": "internet de Fibra \u00d3ptica",
-            "precio": 60000
+            "nombre_servicio": "Internet de Fibra Óptica",
+            "precio": 94392,
+            "megas": 700
         },
         {
-            "numero_servicio": 2,
-            "nombre": "Planes pospago",
-            "precio": 30000
+            "nombre": "Banda ancha",
+            "precio": 164491,
+            "megas": 900
+        }
+    ],
+    "prepago": [
+        {
+            "nombre": "todo incluido",
+            "duracion": "7 dias",
+            "megas": "10 GB",
+            "minutos": "ilimitados",
+            "mensajes": "ilimitados",
+            "precio": 10000
         },
         {
-            "numero_sevicio": 3,
-            "nombre": "Planes prepago",
-            "precio": "25000"
+            "nombre": "todo incluido",
+            "duracion": "15 dias",
+            "megas": "20 GB",
+            "minutos": "ilimitados",
+            "mensajes": "ilimitados",
+            "precio": 21500
+        },
+        {
+            "nombre": "todo incluido",
+            "duracion": "30 dias",
+            "megas": "30 GB",
+            "minutos": "ilimitados",
+            "mensajes": "ilimitados",
+            "precio": 31500
+        }
+    ],
+    "postpago": [
+        {
+            "nombre": "plan 1",
+            "precio": 59900,
+            "megas": "100 GB",
+            "red": "5 G"
+        },
+        {
+            "nombre": "plan 2",
+            "precio": 65900,
+            "megas": "120 GB",
+            "red": "5 G"
+        },
+        {
+            "nombre": "plan 3",
+            "precio": 575900,
+            "megas": "150 GB",
+            "red": "5 G"
+        }
+    ],
+    "entretenimiento": [
+        {
+            "nombre": "claro musica",
+            "precio": 12000
+        },
+        {
+            "nombre": "claro video",
+            "precio": 200000
         }
     ]
-}
+    }
+    
+    
+    

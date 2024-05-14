@@ -1,8 +1,11 @@
 [
     {
-        "nombre": "isa",
-        "direccion": "bka",
-        "telefono": "123",
-        "categoria": "nuevo"
+        "nombre": "carlo",
+        "documento": 3435,
+        "direccion": "frr",
+        "telefono": 1234,
+        "categoria": "Cliente regular",
+        "servicio_utilizado": [],
+        "interaccion": []
     }
 ]

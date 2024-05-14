@@ -1,6 +1,6 @@
 import json
 
-#registro y gestion de datos
+
 archivo_usuarios = "usuarios.json"
 
 def cargar_usuarios():
@@ -12,33 +12,58 @@ def cargar_usuarios():
 
 def guardar_usuarios(usuarios):
     with open(archivo_usuarios, "w") as file:
-        json.dump(usuarios, file, indent=4)
+        json.dumps(usuarios, file, indent=4)
+
+#registro usuario
+
+def obtener_tiempo_en_claro():
+    while True:
+        try:
+            tiempo = float(input("Ingrese la cantidad de meses que lleva en Claro: "))
+            if tiempo >= 0:
+                return tiempo / 12  # Convertir meses a años
+            else:
+                print("Ingrese un número positivo.")
+        except ValueError:
+            print("Ingrese un número válido.")
+
+def asignar_categoria_por_tiempo(tiempo_en_claro):
+    if tiempo_en_claro < 8/12:  # Menos de 8 meses (convertidos a años)
+        return "Nuevo cliente"
+    elif 8/12 <= tiempo_en_claro < 5:  # Entre 8 meses y menos de 5 años
+        return "Cliente regular"
+    else:  # 5 años o más
+        return "Cliente leal"
 
 def crear_usuario():
     nombre = input("Ingrese el nombre del usuario: ")
     while True:
+        documento = input("Ingrese el documento del usuario: ")
         try:
-            documento= int(input("ingrese el documento del usuario: "))
-            break
-        except:
-            print("Ingrese solo numeros")
+            documento = int(documento)
+            break  # Si la conversión es exitosa, salimos del bucle
+        except ValueError:
+            print("Ingrese solo números")
+
     direccion = input("Ingrese la dirección del usuario: ")
     while True:
         try:
-            telefono= int(input("ingrese el telefono del usuario: "))
+            telefono = int(input("Ingrese el teléfono del usuario: "))
             break
-        except:
-            print("Ingrese solo numeros")
-    categoria = input("Ingrese la categoría del usuario (nuevo, regular, leal): ")
-    
+        except ValueError:
+            print("Ingrese solo números")
+
+    tiempo_en_claro = obtener_tiempo_en_claro()
+    categoria = asignar_categoria_por_tiempo(tiempo_en_claro)
+
     usuario = {
         "nombre": nombre,
-        "documento":documento,
+        "documento": documento,
         "direccion": direccion,
         "telefono": telefono,
-        "categoria": categoria
-        "servicios": [],
-        "interacciones": []
+        "categoria": categoria,
+        "servicio_utilizado": [],
+        "interaccion": []
     }
     
     return usuario
@@ -55,9 +80,9 @@ def mostrar_usuarios():
     for indice, usuario in enumerate(usuarios, start=1):
         print(f"Usuario {indice}:")
         print(f"Nombre: {usuario['nombre']}")
-        print(f"documetos: {usuario['documento']}")
+        print(f"Documento: {usuario['documento']}")
         print(f"Dirección: {usuario['direccion']}")
-        print(f"Teléfono: {usuario['telefon']}")
+        print(f"Teléfono: {usuario['telefono']}")
         print(f"Categoría: {usuario['categoria']}")
         print()
 
@@ -71,11 +96,14 @@ def actualizar_usuario():
     
     try:
         indice_usuario = int(input("Ingrese el número de usuario que desea actualizar: ")) - 1
-        usuario_actualizado = crear_usuario()
-        usuarios[indice_usuario] = usuario_actualizado
-        guardar_usuarios(usuarios)
-        print("Usuario actualizado correctamente.")
-    except (ValueError, IndexError):
+        if 0 <= indice_usuario < len(usuarios):
+            usuario_actualizado = crear_usuario()
+            usuarios[indice_usuario] = usuario_actualizado
+            guardar_usuarios(usuarios)
+            print("Usuario actualizado correctamente.")
+        else:
+            print("Número de usuario inválido.")
+    except ValueError:
         print("Número de usuario inválido.")
 
 def eliminar_usuario():
@@ -88,44 +116,23 @@ def eliminar_usuario():
     
     try:
         indice_usuario = int(input("Ingrese el número de usuario que desea eliminar: ")) - 1
-        usuario_eliminado = usuarios.pop(indice_usuario)
-        guardar_usuarios(usuarios)
-        print("Usuario eliminado correctamente.")
-    except (ValueError, IndexError):
+        if 0 <= indice_usuario < len(usuarios):
+            usuario_eliminado = usuarios.pop(indice_usuario)
+            guardar_usuarios(usuarios)
+            print("Usuario eliminado correctamente.")
+        else:
+            print("Número de usuario inválido.")
+    except ValueError:
         print("Número de usuario inválido.")
-
-    Modificar el esquema de usuario
-    suario = {
-    "nombre": "",
-    "direccion": "",
-    "telefono": "",
-    "categoria": "",
-    "servicios_utilizados": [],
-    "interacciones": []
-    }
-
-# Funciones para registrar servicios utilizados e interacciones con la empresa
-def registrar_servicio(usuario, servicio):
-    usuario["servicios_utilizados"].append(servicio)
-
-def registrar_interaccion(usuario, interaccion):
-    usuario["interacciones"].append(interaccion)
-
-# Modificar las funciones cargar_usuarios() y guardar_usuarios(usuarios) para incluir los campos adicionales
-
-# Modificar el menú para incluir opciones para ver el historial de servicios utilizados e interacciones
-
 
 def menu():
     while True:
-        print("\n--- Menú de Usuarios ---")
+        print("--- Menú de Usuarios ---")
         print("1. Agregar Usuario")
         print("2. Mostrar Usuarios")
         print("3. Actualizar Usuario")
         print("4. Eliminar Usuario")
-        print("5. Ver Historial de Servicios Utilizados")
-        print("6. Ver Historial de Interacciones")
-        print("7. Salir")
+        print("5. Salir")
         
         opcion = input("Seleccione una opción: ")
         
@@ -138,15 +145,11 @@ def menu():
         elif opcion == "4":
             eliminar_usuario()
         elif opcion == "5":
-            ver_historial_servicios()
-        elif opcion == "6":
-            ver_historial_interacciones()
-        elif opcion == "7":
-            print("¡Hasta luego!")
+            print("salir")
             break
         else:
             print("Opción inválida. Inténtelo de nuevo.")
        
+menu()
 
-if __name__ == "__main__":
-    menu()
+ 

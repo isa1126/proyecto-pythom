@@ -1,0 +1,17 @@
+Cliente: pau
+Producto: TV Kalley 50 QLED GTV50UHDQV2
+Cantidad: 1
+--------------------------
+Cliente: isa
+Producto: Samsung Galaxy Z Flip
+Cantidad: 3
+--------------------------
+Cliente: za
+Producto: Portátil IdeaPad Slim 3 AMD R3 512 GB SSD
+Cantidad: 2
+--------------------------
+Cliente: zaida
+Producto: Portátil Acer Nitro AN515-58-55TY 512GB SSD 15.6
+Cantidad: 3
+--------------------------
+Cliente: nqProducto: PPortátil HP 14-dq2510la Intel i3 512GB SSD+Mouse+FundaCantidad: 1--------------------------Cliente: f,rProducto: PPortátil HP 14-dq2510la Intel i3 512GB SSD+Mouse+FundaCantidad: 2-------------------------

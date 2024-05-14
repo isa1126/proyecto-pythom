@@ -1,55 +1,36 @@
-import json
+def mostrar_menu_principal():
+    print("--- Menú ---")
+    print("1. Modo Administrador")
+    print("2. Modo Usuario")
+    print("3. Salir")
+
+def mostrar_menu_administrador():
+    print("--- Menú de Administrador ---")
+    print("1. Agregar Usuario")
+    print("2. Mostrar Usuarios")
+    print("3. Actualizar Usuario")
+    print("4. Eliminar Usuario")
+    print("5. Volver al Menú Principal")
+
+def mostrar_menu_usuario():
+    print("--- Menú de Usuario ---")
+    print("1. Buscar prociones personalizadas")
+    print("2.mostrar catalogo")
+    print("3.comprar")
+    print("4registrar_venta")
+    print("5.Mostrar compra registradas")
+    print("6. consulte por nuestro servicios ")
+    print("7.volver al menu principal")
 
 
-# Modificar el esquema de usuario
-usuario = {
-    "nombre": "",
-    "direccion": "",
-    "telefono": "",
-    "categoria": "",
-    "servicios_utilizados": [],
-    "interacciones": []
-}
-
-# Funciones para registrar servicios utilizados e interacciones con la empresa
-def registrar_servicio(usuario, servicio):
-    usuario["servicios_utilizados"].append(servicio)
-
-def registrar_interaccion(usuario, interaccion):
-    usuario["interacciones"].append(interaccion)
-
-# Modificar las funciones cargar_usuarios() y guardar_usuarios(usuarios) para incluir los campos adicionales
-
-# Modificar el menú para incluir opciones para ver el historial de servicios utilizados e interacciones
-def menu():
-    while True:
-        print("\n--- Menú de Usuarios ---")
-        print("1. Agregar Usuario")
-        print("2. Mostrar Usuarios")
-        print("3. Actualizar Usuario")
-        print("4. Eliminar Usuario")
-        print("5. Ver Historial de Servicios Utilizados")
-        print("6. Ver Historial de Interacciones")
-        print("7. Salir")
+def pedir_opcion():
+    opc = 0
+    try:
+        opc = int(input("Ingrese su opción: "))
+        print("***************************************")
+        return opc
+    except Exception:
+        print("Valor inválido")
+        print("***************************************")
+        return -1
         
-        opcion = input("Seleccione una opción: ")
-        
-        if opcion == "1":
-            agregar_usuario()
-        elif opcion == "2":
-            mostrar_usuarios()
-        elif opcion == "3":
-            actualizar_usuario()
-        elif opcion == "4":
-            eliminar_usuario()
-        elif opcion == "5":
-            ver_historial_servicios()
-        elif opcion == "6":
-            ver_historial_interacciones()
-        elif opcion == "7":
-            print("¡Hasta luego!")
-            break
-        else:
-            print("Opción inválida. Inténtelo de nuevo.")
-
-# Otras funciones necesarias
