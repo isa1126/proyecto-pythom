@@ -57,6 +57,6 @@ def menu():
         else:
             print("Opción inválida. Inténtelo de nuevo.")
 
-# Ejemplo de uso
+
 menu()
 
